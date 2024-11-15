@@ -1,3 +1,8 @@
+・[日本語](#japanese)
+・[English](#english)
+
+<p id="#japanese">日本語</p>
+
 # GenPass - パスワードジェネレーター
 
 GenPassは、シンプルで使いやすいパスワードジェネレーターアプリです。強力なパスワードを簡単に生成し、セキュリティを強化するのに役立ちます。
@@ -48,6 +53,7 @@ GitHub Pagesでホストされたアプリをお試しください：[GenPass Li
 コントリビューションは大歓迎です！バグの報告や新機能の提案があれば、ぜひ[Issues](https://github.com/suzushin7/GenPass/issues)からお知らせください。
 
 ---
+<p id="english">English</p>
 
 # GenPass - Password Generator
 
