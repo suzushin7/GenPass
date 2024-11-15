@@ -3,6 +3,8 @@
 
 <p id="#japanese">日本語</p>
 
+<img src="/screenshot.jpg" alt="GenPass" width="640" height="463" />
+
 # GenPass - パスワードジェネレーター
 
 GenPassは、シンプルで使いやすいパスワードジェネレーターアプリです。強力なパスワードを簡単に生成し、セキュリティを強化するのに役立ちます。
