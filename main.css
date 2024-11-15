@@ -34,7 +34,7 @@ body {
 
 /* コンテナ */
 .container {
-  max-width: 800px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -144,14 +144,33 @@ a:hover {
   text-decoration: underline;
 }
 
-/* テキストエリアのコピーボタンとの調整 */
-textarea {
-  height: 60px;
+#history {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#history li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #222;
   color: #fff;
-  border: 1px solid #444;
-  border-radius: 5px;
-  font-size: 16px;
+  margin-bottom: 5px;
   padding: 10px;
-  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#history button {
+  background: #00aaff;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+#history button:hover {
+  background: #0077cc;
 }

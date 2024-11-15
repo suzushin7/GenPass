@@ -14,6 +14,7 @@ GenPassは、シンプルで使いやすいパスワードジェネレーター�
 - 数字、英字（小文字/大文字）、記号の使用可否を選択可能
 - 生成されたパスワードを簡単にコピー
 - パスワードの強度をリアルタイムで評価
+- パスワード履歴
 - モダンでスタイリッシュなデザイン
 
 ---
@@ -41,6 +42,7 @@ GitHub Pagesでホストされたアプリをお試しください：[GenPass Li
 2. 必要なオプション（数字、小文字、大文字、記号）を選択します。
 3. 「Generate Password」ボタンをクリックします。
 4. 生成されたパスワードをコピーして使用します。
+5. パスワード履歴からもコピーできます。
 
 ---
 
@@ -66,6 +68,7 @@ GenPass is a simple and user-friendly password generator app designed to help yo
 - Customizable options for numbers, lowercase/uppercase letters, and symbols
 - Easy-to-copy generated passwords
 - Real-time password strength evaluation
+- Password History
 - Modern and stylish design
 
 ---
@@ -93,6 +96,7 @@ Try the app hosted on GitHub Pages: [GenPass Live Demo](https://suzushin7.github
 2. Select the desired options (numbers, lowercase, uppercase, symbols).
 3. Click the "Generate Password" button.
 4. Copy the generated password and use it securely.
+5. You can also copy password from history.
 
 ---
 

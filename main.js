@@ -20,6 +20,9 @@
  * SOFTWARE.
  */
 
+const passwordHistory = []; // 履歴を保存する配列
+const maxHistorySize = 10; // 履歴の最大サイズ
+
 // スライダーと表示用要素を取得
 const lengthSlider = document.getElementById('lengthSlider');
 const lengthValue = document.getElementById('lengthValue');
@@ -43,12 +46,14 @@ document.getElementById('generateButton').addEventListener('click', () => {
   // パスワードの強度を表示
   const strength = evaluateStrength(password);
   displayStrength(strength);
+
+  addToHistory(password);
 });
 
 // コピー機能の処理
 document.getElementById('copyButton').addEventListener('click', async () => {
   const passwordField = document.getElementById('output');
-  const password = passwordField.value;
+  const password = passwordField.textContent;
 
   if (!password) {
     alert('No password to copy!');
@@ -57,7 +62,7 @@ document.getElementById('copyButton').addEventListener('click', async () => {
 
   try {
     await navigator.clipboard.writeText(password);
-    alert('Password copied to clipboard!');
+    alert('Copied to clipboard: ' + password);
   } catch (err) {
     console.error('Failed to copy text: ', err);
     alert('Failed to copy the password.');
@@ -113,4 +118,42 @@ function displayStrength(strength) {
   const strengthText = document.getElementById('strength');
   strengthText.textContent = `Password Strength: ${strength.charAt(0).toUpperCase() + strength.slice(1)}`;
   strengthText.className = strength;
+}
+
+// 履歴に追加
+function addToHistory(password) {
+  if (passwordHistory.length >= maxHistorySize) {
+    passwordHistory.pop();
+  }
+  passwordHistory.unshift(password);
+  renderHistory();
+}
+
+// 履歴を表示
+function renderHistory() {
+  const historyElement = document.getElementById('history');
+  historyElement.innerHTML = '';
+
+  passwordHistory.forEach((password, index) => {
+    const li = document.createElement('li');
+    li.textContent = password;
+
+    const copyButton = document.createElement('button');
+    copyButton.textContent = 'Copy';
+    copyButton.addEventListener('click', () => copyToClipboard(password));
+
+    li.appendChild(copyButton);
+    historyElement.appendChild(li);
+  });
+}
+
+// パスワードをクリップボードにコピー
+async function copyToClipboard(password) {
+  try {
+    await navigator.clipboard.writeText(password);
+    alert(`Copied to clipboard: ${password}`);
+  } catch (err) {
+    console.error('Failed to copy text: ', err);
+    alert('Failed to copy the password.');
+  }
 }
