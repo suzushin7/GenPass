@@ -50,6 +50,17 @@ document.getElementById('generateButton').addEventListener('click', () => {
   addToHistory(password);
 });
 
+// パスワードをクリップボードにコピー
+async function copyToClipboard(password) {
+  try {
+    await navigator.clipboard.writeText(password);
+    alert(`Copied to clipboard: ${password}`);
+  } catch (err) {
+    console.error('Failed to copy text: ', err);
+    alert('Failed to copy the password.');
+  }
+}
+
 // コピー機能の処理
 document.getElementById('copyButton').addEventListener('click', async () => {
   const passwordField = document.getElementById('output');
@@ -60,13 +71,7 @@ document.getElementById('copyButton').addEventListener('click', async () => {
     return;
   }
 
-  try {
-    await navigator.clipboard.writeText(password);
-    alert('Copied to clipboard: ' + password);
-  } catch (err) {
-    console.error('Failed to copy text: ', err);
-    alert('Failed to copy the password.');
-  }
+  copyToClipboard(password);
 });
 
 // パスワード生成ロジック
@@ -145,15 +150,4 @@ function renderHistory() {
     li.appendChild(copyButton);
     historyElement.appendChild(li);
   });
-}
-
-// パスワードをクリップボードにコピー
-async function copyToClipboard(password) {
-  try {
-    await navigator.clipboard.writeText(password);
-    alert(`Copied to clipboard: ${password}`);
-  } catch (err) {
-    console.error('Failed to copy text: ', err);
-    alert('Failed to copy the password.');
-  }
 }
