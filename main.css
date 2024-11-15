@@ -160,9 +160,11 @@ a:hover {
   margin-bottom: 5px;
   padding: 10px;
   border-radius: 5px;
+  overflow-wrap: anywhere;
 }
 
 #history button {
+  min-width: 100px;
   background: #00aaff;
   border: none;
   color: #fff;
