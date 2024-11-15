@@ -1,5 +1,5 @@
-・[日本語](#japanese)
-・[English](#english)
+- [日本語](#japanese)
+- [English](#english)
 
 <p id="#japanese">日本語</p>
 
