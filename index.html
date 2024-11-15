@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GenPass</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>GenPass</h1>
+		<form id="passwordForm">
+			<label>
+				Password Length:
+				<span id="lengthValue">16</span>
+			</label>
+			<input type="range" id="lengthSlider" min="4" max="64" value="16">
+			<div>
+				<label><input type="checkbox" id="includeNumbers" checked> Include Numbers (0123456789)</label>
+				<label><input type="checkbox" id="includeLowercase" checked> Include Lowercase Letters
+					(abcdefghijklmnopqrstuvwxyz)</label>
+				<label><input type="checkbox" id="includeUppercase" checked> Include Uppercase Letters
+					(ABCDEFGHIJKLMNOPQRSTUVWXYZ)</label>
+				<label><input type="checkbox" id="includeSymbols" checked> Include Symbols
+					(!@#$%^&*()-_=+[]{};:,.&lt;&gt;?)</label>
+			</div>
+			<button type="button" id="generateButton">Generate Password</button>
+		</form>
+		<div>
+			<h2>Your Password:</h2>
+			<div id="output"></div>
+			<button type="button" id="copyButton">Copy to Clipboard</button>
+			<p id="strength"></p>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
